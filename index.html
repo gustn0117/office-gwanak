@@ -10,7 +10,7 @@
 	<!-- Start of headStart -->
     
     <!-- End of headStart -->
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="generator" content="Framer 4eeba22">
 	<title>IL 공유오피스 관악구점</title>
     <meta name="description" content="IL 공유오피스 관악구점">
@@ -201,7 +201,7 @@
 </div>
 	<!-- Start of bodyEnd -->
 <style>
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth}body{overflow-x:hidden}
 .framer-vubu0p{background:rgba(0,0,0,0.55)!important}
 .framer-y5gfil img{animation:heroZoom 20s ease-out forwards}
 @keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1)}}
@@ -230,12 +230,43 @@ html{scroll-behavior:smooth}
 .floating-cta.visible{opacity:1;pointer-events:auto;transform:translateY(0)}
 .floating-cta:hover{transform:translateY(-3px)!important;box-shadow:0 8px 32px rgba(0,0,0,0.35)}
 .floating-cta svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
-@media(max-width:809.98px){.floating-cta{bottom:20px;right:20px;padding:12px 20px;font-size:14px}}
+@media(max-width:809.98px){
+/* Fix Framer fixed 390px root - make fluid */
+.framer-H3DwA.framer-72rtr7{width:100%!important;min-width:0!important;max-width:100vw!important;overflow-x:hidden!important}
+/* Hero: prevent text overflow */
+.framer-H3DwA .framer-14ordp2,.framer-H3DwA .framer-nsxjkd,.framer-H3DwA .framer-xdqu12{width:100%!important;max-width:100%!important}
+/* Hero padding */
+.framer-H3DwA .framer-w13gz0{padding-left:20px!important;padding-right:20px!important}
+/* Contact section: reduce 80px padding */
+.framer-H3DwA .framer-180w1au{padding-left:20px!important;padding-right:20px!important;gap:40px!important}
+/* Contact cards stretch */
+.framer-H3DwA .framer-prqmhb{width:100%!important}
+/* Work step section padding */
+.framer-H3DwA .framer-fvp4lv{padding-left:20px!important;padding-right:20px!important}
+/* Why choose section */
+.framer-H3DwA .framer-wcv7ty{padding-left:20px!important;padding-right:20px!important}
+/* Content section padding fix */
+.framer-H3DwA .framer-5n9jg5{padding-left:20px!important;padding-right:20px!important}
+/* FAQ section */
+.framer-H3DwA .framer-o3q26g{padding-left:20px!important;padding-right:20px!important}
+/* Feature grid - ensure single column */
+.framer-H3DwA .framer-1tc6gme{gap:16px!important}
+/* Button row wrap on small screens */
+.framer-H3DwA .framer-1txi8d7{flex-wrap:wrap!important;justify-content:center!important}
+/* Floating CTA smaller */
+.floating-cta{bottom:20px;right:20px;padding:12px 20px;font-size:14px}
+/* Scroll indicator lower */
+.hero-scroll-indicator{bottom:16px}
+}
 .custom-footer{background:rgb(24,33,45);color:rgba(255,255,255,0.5);padding:48px 40px;display:flex;flex-direction:column;align-items:center;gap:16px;font-family:"DM Sans",sans-serif}
 .custom-footer-logo{font-size:17px;font-weight:700;color:#fff}
 .custom-footer-info{text-align:center;font-size:13px;line-height:1.8}
 .custom-footer-divider{width:36px;height:1px;background:rgba(255,255,255,0.12);margin:4px 0}
 .custom-footer-copyright{font-size:12px;color:rgba(255,255,255,0.25)}
+@media(min-width:810px) and (max-width:1199.98px){
+/* Tablet: fix root width */
+.framer-H3DwA.framer-72rtr7{width:100%!important;max-width:100vw!important;overflow-x:hidden!important}
+}
 @media(max-width:809.98px){.custom-footer{padding:32px 24px}.custom-footer-info{font-size:12px}}
 </style>
 <script>
