@@ -13838,153 +13838,438 @@
     ></div>
     <!-- Start of bodyEnd -->
 
-    <!-- Custom enhancements for contact section -->
+    <!-- Comprehensive design enhancements -->
     <style>
+      /* ===== GLOBAL ===== */
+      html { scroll-behavior: smooth; }
+
+      /* Scroll-triggered fade-in animation */
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1);
+      }
+      .reveal-on-scroll.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ===== HERO SECTION ===== */
+      .framer-w13gz0 {
+        min-height: 100vh !important;
+        height: 100vh !important;
+      }
+      /* Better dark overlay for readability */
+      .framer-vubu0p {
+        background: linear-gradient(
+          180deg,
+          rgba(0,0,0,0.18) 0%,
+          rgba(0,0,0,0.45) 50%,
+          rgba(0,0,0,0.65) 100%
+        ) !important;
+      }
+      /* Hero image subtle zoom on load */
+      .framer-y5gfil {
+        animation: heroZoom 20s ease-out forwards;
+      }
+      @keyframes heroZoom {
+        from { transform: scale(1.08); }
+        to   { transform: scale(1); }
+      }
+      /* Hero content container */
+      .framer-1jwe6yu {
+        gap: 28px !important;
+      }
+      /* Hero title */
+      .framer-14ordp2 h1.framer-text {
+        text-shadow: 0 2px 30px rgba(0,0,0,0.3);
+        letter-spacing: -0.02em;
+      }
+      /* Hero subtitle */
+      .framer-nsxjkd p.framer-text {
+        text-shadow: 0 1px 16px rgba(0,0,0,0.25);
+      }
+      /* Hero bottom text (입주공간 문의) */
+      .framer-xdqu12 {
+        background: rgba(255,255,255,0.1) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 12px;
+        padding: 14px 28px !important;
+        width: auto !important;
+        max-width: 600px;
+      }
+      /* Hero CTA buttons */
+      .framer-sOgfX.framer-pgbszi,
+      .framer-DooxP.framer-183ufrm {
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+      }
+      .framer-sOgfX.framer-pgbszi:hover,
+      .framer-DooxP.framer-183ufrm:hover {
+        transform: translateY(-2px) scale(1.02) !important;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.2) !important;
+      }
+      /* Scroll indicator */
+      .hero-scroll-indicator {
+        position: absolute;
+        bottom: 36px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+      .hero-scroll-indicator span {
+        font-family: "DM Sans", sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.5);
+      }
+      .hero-scroll-indicator svg {
+        width: 20px; height: 20px;
+        stroke: rgba(255,255,255,0.5);
+      }
+      @keyframes scrollBounce {
+        0%,100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(8px); }
+      }
+
+      /* ===== WORK STEP SECTION ===== */
+      .framer-fvp4lv {
+        background: linear-gradient(180deg, #fff 0%, #f8f9fa 100%) !important;
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
+      }
+      /* Step number circles */
+      .framer-fvp4lv .framer-text[style*="font-size: 92px"],
+      .framer-fvp4lv .framer-text[style*="--framer-font-size: 92px"] {
+        background: linear-gradient(135deg, rgb(38,38,38), rgb(80,80,80));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* ===== WHY CHOOSE / FEATURE CARDS ===== */
+      .framer-wcv7ty {
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
+      }
+      /* Feature card images - hover zoom */
+      .framer-1tc6gme [data-framer-name="Image"] img {
+        transition: transform 0.5s cubic-bezier(.22,1,.36,1);
+      }
+      .framer-1tc6gme [data-framer-name="Feature Card"]:hover img {
+        transform: scale(1.05);
+      }
+      /* Feature card content area */
+      .framer-1tc6gme [data-framer-name="Content"] {
+        transition: background-color 0.3s ease;
+      }
+      .framer-1tc6gme [data-framer-name="Feature Card"]:hover [data-framer-name="Content"] {
+        background-color: rgba(245,247,246,0.5) !important;
+      }
+
+      /* ===== CONTENT SECTION (비상주 등) ===== */
+      .framer-5n9jg5 {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+      }
+      .framer-5n9jg5 [data-framer-name="Image"] {
+        border-radius: 20px !important;
+        overflow: hidden !important;
+      }
+      .framer-5n9jg5 [data-framer-name="Image"] img {
+        transition: transform 0.5s ease;
+      }
+      .framer-5n9jg5:hover [data-framer-name="Image"] img {
+        transform: scale(1.03);
+      }
+
+      /* ===== STATS / FAQ SECTION ===== */
+      .framer-o3q26g {
+        background: #f8f9fa !important;
+        padding-top: 100px !important;
+        padding-bottom: 100px !important;
+      }
+      /* FAQ items */
+      [data-framer-name="Closed"] {
+        transition: background-color 0.2s ease, transform 0.2s ease !important;
+        border-radius: 12px !important;
+        cursor: pointer;
+      }
+      [data-framer-name="Closed"]:hover {
+        background-color: rgba(0,0,0,0.02) !important;
+      }
+
+      /* ===== CONTACT / MAP SECTION ===== */
       /* Fix map visibility */
       .framer-yg1cna-container {
         opacity: 1 !important;
         will-change: auto !important;
       }
-
       /* Contact section background */
       .framer-180w1au {
-        background: linear-gradient(180deg, rgba(245,247,246,0) 0%, rgba(245,247,246,1) 8%);
+        background: linear-gradient(180deg, rgba(245,247,246,0) 0%, #f5f7f6 6%) !important;
+        padding-top: 140px !important;
+        padding-bottom: 80px !important;
       }
-
-      /* Contact card enhancements */
+      /* Contact cards */
       .framer-CJ9Gl.framer-11pj0eq,
       .framer-00F7s.framer-1r022dm {
         padding: 28px 24px !important;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        background: rgba(255,255,255,0.7) !important;
-        backdrop-filter: blur(10px);
+        transition: transform 0.25s cubic-bezier(.22,1,.36,1), box-shadow 0.25s ease;
+        background: rgba(255,255,255,0.85) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
       }
       .framer-CJ9Gl.framer-11pj0eq:hover,
       .framer-00F7s.framer-1r022dm:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.08) !important;
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.08) !important;
       }
-
-      /* Icon circle enhancement */
+      /* Icon circles */
       .framer-1aqf6ce,
       .framer-ryn9yp {
-        width: 48px !important;
-        height: 48px !important;
-        min-width: 48px !important;
-        min-height: 48px !important;
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+        min-height: 50px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        background: linear-gradient(135deg, rgb(38,38,38) 0%, rgb(60,60,60) 100%) !important;
+        background: linear-gradient(135deg, rgb(30,30,30) 0%, rgb(55,55,55) 100%) !important;
         border-color: transparent !important;
       }
       .framer-1aqf6ce svg,
       .framer-ryn9yp svg {
-        width: 22px;
-        height: 22px;
+        width: 22px; height: 22px;
         color: white;
       }
-
-      /* Address font size fix */
-      .framer-1d2378s .framer-text,
-      .framer-i0nk2i .framer-text {
-        --framer-font-size: 15px !important;
+      /* Map container */
+      .framer-yg1cna-container > div {
+        border-radius: 20px !important;
+        overflow: hidden !important;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.08);
       }
-
-      /* Subtitle heading style */
-      .framer-180w1au .framer-1f2jmpd .framer-1ijcojn p.framer-text {
-        --framer-font-size: 16px !important;
-        --framer-text-color: rgb(120, 120, 120) !important;
-      }
-
-      /* Section heading */
-      .framer-180w1au .framer-1f2jmpd .framer-kk2g63 {
-        position: relative;
-      }
-
-      /* Phone number as clickable link style */
+      /* Phone link */
       .contact-phone-link {
         color: inherit;
         text-decoration: none;
         transition: color 0.2s;
+        font-weight: 500;
       }
       .contact-phone-link:hover {
         color: rgb(38, 38, 38);
       }
 
-      /* Map border radius */
-      .framer-yg1cna-container > div {
-        border-radius: 16px !important;
-        overflow: hidden !important;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      }
-
-      /* Footer-like bottom area */
-      .contact-footer {
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 24px 80px 40px;
-        text-align: center;
-        font-family: "Satoshi", sans-serif;
-        font-size: 13px;
-        color: rgb(160, 160, 160);
+      /* ===== FLOATING CTA BUTTON ===== */
+      .floating-cta {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 24px;
+        background: rgb(24, 33, 45);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
         letter-spacing: -0.01em;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.3s ease;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(20px);
       }
-      .contact-footer-divider {
-        width: 100%;
-        max-width: 1280px;
-        margin: 0 auto;
-        height: 1px;
-        background: rgba(116, 128, 125, 0.15);
+      .floating-cta.visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+      .floating-cta:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      }
+      .floating-cta svg {
+        width: 18px; height: 18px;
+        stroke: currentColor; fill: none;
+        stroke-width: 2;
       }
       @media (max-width: 809.98px) {
-        .contact-footer {
-          padding: 20px 24px 32px;
-          font-size: 12px;
+        .floating-cta {
+          bottom: 20px;
+          right: 20px;
+          padding: 12px 20px;
+          font-size: 14px;
         }
+      }
+
+      /* ===== FOOTER ===== */
+      .custom-footer {
+        background: rgb(24, 33, 45);
+        color: rgba(255,255,255,0.5);
+        padding: 48px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        font-family: "DM Sans", sans-serif;
+      }
+      .custom-footer-logo {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.02em;
+      }
+      .custom-footer-info {
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.8;
+        letter-spacing: -0.01em;
+      }
+      .custom-footer-divider {
+        width: 40px;
+        height: 1px;
+        background: rgba(255,255,255,0.15);
+      }
+      .custom-footer-copyright {
+        font-size: 12px;
+        color: rgba(255,255,255,0.3);
+      }
+      @media (max-width: 809.98px) {
+        .custom-footer {
+          padding: 36px 24px;
+        }
+        .custom-footer-info { font-size: 12px; }
+      }
+
+      /* ===== SMOOTH SECTION TRANSITIONS ===== */
+      .framer-fvp4lv,
+      .framer-wcv7ty,
+      .framer-5n9jg5,
+      .framer-o3q26g {
+        position: relative;
+      }
+
+      /* ===== NAVIGATION TOP BAR ENHANCEMENT ===== */
+      .framer-1rknwdm {
+        display: none !important;
       }
     </style>
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // Location icon SVG
-        var locationSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>';
 
-        // Phone icon SVG
-        var phoneSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>';
+        // === SCROLL REVEAL ANIMATION ===
+        var sections = document.querySelectorAll(
+          '.framer-fvp4lv, .framer-wcv7ty, .framer-5n9jg5, .framer-o3q26g, .framer-180w1au'
+        );
+        sections.forEach(function(s) { s.classList.add('reveal-on-scroll'); });
 
-        // Inject location icons
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+            }
+          });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal-on-scroll').forEach(function(el) {
+          observer.observe(el);
+        });
+
+        // === HERO SCROLL INDICATOR ===
+        var hero = document.querySelector('.framer-w13gz0');
+        if (hero) {
+          var indicator = document.createElement('div');
+          indicator.className = 'hero-scroll-indicator';
+          indicator.innerHTML = '<span>Scroll</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>';
+          hero.appendChild(indicator);
+
+          // Hide on scroll
+          window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+              indicator.style.opacity = '0';
+            } else {
+              indicator.style.opacity = '1';
+            }
+          }, { passive: true });
+        }
+
+        // === FLOATING CTA BUTTON ===
+        var floatingBtn = document.createElement('a');
+        floatingBtn.className = 'floating-cta';
+        floatingBtn.href = 'http://pf.kakao.com/_GRqYn';
+        floatingBtn.target = '_blank';
+        floatingBtn.rel = 'noopener';
+        floatingBtn.innerHTML = '<svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>상담 문의';
+        document.body.appendChild(floatingBtn);
+
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > window.innerHeight * 0.6) {
+            floatingBtn.classList.add('visible');
+          } else {
+            floatingBtn.classList.remove('visible');
+          }
+        }, { passive: true });
+
+        // === CONTACT SECTION: INJECT ICONS ===
+        var locationSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+        var phoneSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+
         document.querySelectorAll('.framer-1x8fayq-container').forEach(function(el) {
           var inner = el.querySelector('div[style*="display: contents"]');
-          if (inner && inner.innerHTML.trim() === '') {
-            inner.innerHTML = locationSVG;
-          }
+          if (inner && inner.innerHTML.trim() === '') inner.innerHTML = locationSVG;
         });
-
-        // Inject phone icons
         document.querySelectorAll('.framer-2f9g3w-container').forEach(function(el) {
           var inner = el.querySelector('div[style*="display: contents"]');
-          if (inner && inner.innerHTML.trim() === '') {
-            inner.innerHTML = phoneSVG;
-          }
+          if (inner && inner.innerHTML.trim() === '') inner.innerHTML = phoneSVG;
         });
 
-        // Make phone numbers clickable
+        // === PHONE NUMBERS CLICKABLE ===
         document.querySelectorAll('.framer-i0nk2i .framer-text').forEach(function(el) {
           if (el.textContent.trim().match(/\d{3}-\d{4}-\d{4}/)) {
             var phone = el.textContent.trim();
-            el.innerHTML = '<a href="tel:' + phone.replace(/-/g, '') + '" class="contact-phone-link">' + phone + '</a>';
+            el.innerHTML = '<a href="tel:' + phone.replace(/-/g,'') + '" class="contact-phone-link">' + phone + '</a>';
           }
         });
 
-        // Add footer
-        var mainDiv = document.querySelector('.framer-180w1au');
-        if (mainDiv && mainDiv.parentNode) {
-          var footer = document.createElement('div');
-          footer.innerHTML = '<div class="contact-footer-divider"></div><div class="contact-footer">&copy; 2026 IL 공유오피스 관악구점. All rights reserved.</div>';
-          mainDiv.parentNode.insertBefore(footer, mainDiv.nextSibling);
+        // === CUSTOM FOOTER ===
+        var rootEl = document.querySelector('[data-framer-root]');
+        if (rootEl) {
+          var footer = document.createElement('footer');
+          footer.className = 'custom-footer';
+          footer.innerHTML =
+            '<div class="custom-footer-logo">IL 공유오피스 관악구점</div>' +
+            '<div class="custom-footer-info">' +
+              '서울특별시 관악구 봉천로 31길 9, 2층<br>' +
+              'TEL 010-4783-4127<br>' +
+              '봉천역 도보 3분 &middot; 24시간 출입 &middot; 1~2인실 전문' +
+            '</div>' +
+            '<div class="custom-footer-divider"></div>' +
+            '<div class="custom-footer-copyright">&copy; 2026 IL 공유오피스 관악구점. All rights reserved.</div>';
+          rootEl.appendChild(footer);
         }
+
+        // === "비상주 문의하기" BUTTON FIX ===
+        // The secondary button links to ./contact which doesn't exist.
+        // Redirect it to the 오시는길 section instead.
+        document.querySelectorAll('a[href="./contact"]').forEach(function(a) {
+          a.href = '#오시는길';
+          a.removeAttribute('target');
+        });
+
       });
     </script>
 
